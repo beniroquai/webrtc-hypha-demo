@@ -3,6 +3,8 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebRTC demo</title>
+    <div id="buttons">
+    <button onclick="sendStageUp()">Stage Up</button>
     <script src="https://cdn.jsdelivr.net/npm/imjoy-rpc@0.5.6/dist/hypha-rpc-websocket.min.js"></script>
     <style>
     button {
@@ -85,6 +87,8 @@
 <button id="start" onclick="start()">Start</button>
 <button id="stop" style="display: none" onclick="stop()">Stop</button>
 
+
+    
 <h2>State</h2>
 <p>
     ICE gathering state: <span id="ice-gathering-state"></span>
@@ -216,17 +220,51 @@ function negotiate() {
 
         const server = await hyphaWebsocketClient.connectToServer({"name": "js-client", "server_url": "https://ai.imjoy.io", "method_timeout": 10})
         const svc = await server.getService(service_id)
+        
+        const clients = [];
+        await server.register_service(
+        {
+            "id": "display-image",
+            "config":{
+                "visibility": "public"
+            },
+            "type": "test-display",
+            add_button(name, svc_led){
+                const buttonsElem = document.getElementById("buttons");
+                const btn = document.createElement("button")
+                btn.innerHTML = name;
+                btn.onclick = async ()=>{
+                    await svc_led.turn_on()
+                }
+                buttonsElem.appendChild(btn)
+            }
+        }
+        )
+
+
         const answer = await svc.offer({
             sdp: offer.sdp,
             type: offer.type,
             video_transform: document.getElementById('video-transform').value
         })
         document.getElementById('answer-sdp').textContent = answer.sdp;
+        
+    
         return pc.setRemoteDescription(answer);
 
     }).catch(function(e) {
         alert(e);
     });
+}
+
+function sendStageUp(){
+    var parameters = JSON.parse('{"z":100}');
+    pc = createPeerConnection();
+    dc = pc.createDataChannel('data', parameters);
+
+    var message = 'StageUp';
+    dc.send(message);
+    dc.close()
 }
 
 function start() {
