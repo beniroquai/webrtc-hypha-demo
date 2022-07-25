@@ -78,7 +78,20 @@ async def offer(params, context=None):
         def on_message(message):
             if isinstance(message, str) and message.startswith("ping"):
                 channel.send("pong" + message[4:])
-                print(message)
+            elif message in ["right", "left", "up", "down"]:
+                print(f"===> command received: {message}")
+                if message=="right":
+                    imswitchServer.move(positionerName=None, axis="X", dist=1000)
+                if message=="left":
+                    imswitchServer.move(positionerName=None, axis="X", dist=-1000)
+                if message=="up":
+                    imswitchServer.move(positionerName=None, axis="Y", dist=1000)
+                if message=="down":
+                    imswitchServer.move(positionerName=None, axis="Y", dist=-1000)
+                    
+                    
+                # pc.transport.send(message.encode())
+                channel.send("completed")
 
     @pc.on("connectionstatechange")
     async def on_connectionstatechange():
@@ -141,14 +154,6 @@ async def start_service(service_id, workspace=None, token=None):
     )
     async def turn_on():
         await print("Turn on") #svc.show_status("turn 222")
-
-    svc_info = await server.register_service({
-        "id": "led",
-        "type": "led",
-        "name": "led",
-        "config": {"visibility": "public"},
-        "turn_on": turn_on
-    }, overwrite=True)
 
     print(
         f"Service (client_id={client_id}, service_id={service_id}) started successfully, available at https://ai.imjoy.io/{server.config.workspace}/services"
