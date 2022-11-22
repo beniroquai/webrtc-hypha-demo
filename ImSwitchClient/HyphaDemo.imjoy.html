@@ -1,0 +1,79 @@
+﻿<docs lang="markdown">
+[TODO: write documentation for this plugin.]
+</docs>
+​
+<config lang="json">
+{
+  "name": "HyphaDemo",
+  "type": "window",
+  "tags": [],
+  "ui": "",
+  "version": "0.1.0",
+  "cover": "",
+  "description": "[TODO: describe this plugin with one sentence.]",
+  "icon": "extension",
+  "inputs": null,
+  "outputs": null,
+  "api_version": "0.1.8",
+  "env": "",
+  "permissions": [],
+  "requirements": ["https://cdn.jsdelivr.net/npm/imjoy-rpc@0.5.7/dist/hypha-rpc-websocket.min.js"],
+  "dependencies": [],
+  "defaults": {"w": 20, "h": 10}
+}
+</config>
+​
+<script lang="javascript">
+​
+async function setupHypha(){
+    const server = await hyphaWebsocketClient.connectToServer({"name": "js-client", "server_url": "https://ai.imjoy.io", "method_timeout": 10})
+    const clients = [];
+    await server.register_service(
+        {
+            "id": "display-image",
+            "config":{
+                "visibility": "public"
+            },
+            "type": "test-display",
+            show_status( data ){
+                console.log("this is your data: ", data)
+                const statusElem = document.getElementById("status");
+                statusElem.innerHTML = data;
+            },
+            display_image(img) {
+                const imgElem = document.getElementById("img");
+                imgElem.src = img;
+            },
+            add_button(name, svc_led){
+                const buttonsElem = document.getElementById("buttons");
+                const btn = document.createElement("button")
+                btn.innerHTML = name;
+                btn.onclick = async ()=>{
+                    await svc_led.turn_on()
+                }
+                buttonsElem.appendChild(btn)
+            }
+        }
+    )
+}
+​
+class ImJoyPlugin {
+  async setup() {
+    await setupHypha()
+  }
+}
+​
+api.export(new ImJoyPlugin())
+</script>
+​
+<window lang="html">
+  <div>
+    <h1 id="status">Ready<h1>
+    <img id="img">
+    <div id="buttons"></div>
+  </div>
+</window>
+​
+<style lang="css">
+​
+</style>

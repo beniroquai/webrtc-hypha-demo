@@ -5,6 +5,7 @@ from _serialize import register_serializers
 #%%
 register_serializers()
 ipaddress = "0.0.0.0"
+ipaddress = "192.168.2.121"
 
 #ipaddress = "192.168.2.162"
 uri = 'PYRO:ImSwitchServer@'+ipaddress+':54333'

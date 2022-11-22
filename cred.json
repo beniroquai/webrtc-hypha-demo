@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "openuc2-microscope",
+  "private_key_id": "040a394a22d77ab5748096e69127b49673fb750b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDbx6hX0QpFBtXH\n3Kvx8d1wwwHYQSq6WlDXgs1YIkXPwCgQAPu2HWCgSfVIS2pE8FkpkRK8eitNV5x5\nDoMe3PoY0awXedJPM40bf/aHXtVqrScWhCPR4o1L4IwRPvvllDamyv77L8A4+VAp\nubLde5znNPTxJjkm5EqHnuTw0IgSwshIwUI1LogyJTDDipzc7KH4EEOzE4Ibf2E+\ncGYs2xGO4zyY17cVZumT6Cbhk8SGlezE0eCU+Oav480QI1Wm+PMB1ggv0rhfCkv0\nU+EviYJHVzUlDoZZbZaD5i7hB+YHZm+7lZUjitLbp2gXKgcOIuRqFgERoz+h1hYH\nCI3CUNsBAgMBAAECggEAa9FGQhJwVc2VGa+lgJNVPWjFImhRxErjRt5Jy3dAxTqw\nzK0WztAZo3i0xksM7pX0P8KGLQVH8fDNd8vJQl5IqN1PbdLa+/S/wCJl+CHrU6Jv\nPwoDIodgJr2ZKSq7W3R63RdPwD08MRcJnvaVCzeFkR03HohQWEZ9U4v9JzA92Olh\nQc0Ik2pT0X6q89JaEJDaUxbOB3mcxq44fwMMMoSN/S4yle+Hv7toXqD3AzP2MAH8\nLUVJBninVl+vD1avQiey8ud4fbRy+ed+0viI2dftjWQ1ujHKtjohGvbVQqAijqqW\nlzZ/I7WKveRPkNfyoklQVgqEfJxxaOOKJF9jw5BVWwKBgQD7p96wG/zovntZxY4z\nh6rmGjeshrennjnS9B79wM6Eb2M++n9Ra75avWG0eFPolk9R7LUrcwKmPTmpFrFs\ncxxqrzjqbjl+VSbBIqqNjpnirfT6zxVSkzlEe1FSK07U8s78WkuoI+tAbM/+SACy\nXbJSWW62W9a4AR8VGzjszATJfwKBgQDfkuufAZDUR+CicHsm/Fj7PKzOt8IQESf9\nTWYvPAhoHX7zECg33jXD2S+dOnlBCxab7tp+Gvw8tI33L1NamDW4YDnyjdSbIpjL\nxRDYYZuOPwfR85eM3fhJwnrMhruV3ZK9In7SekThAglpF2O/jYEjwMY66E5TwdDK\nQki66I+bfwKBgBOr/LFhjrSW50eONN58VXSlSgLXiRW2Pajq4l1NrBcYKfbrV/aC\naJ/pO/ECkvSUg2DRExxxYhyinpZEKtxiZy9DwTw6H45rk5r3XcOxCQB6PrM4at9I\nmOpshV/Z+NCWpm19lXpwTFx95Qhokn1e66iaSxhAN5mspMRem2WPUTR7AoGAI2S3\n5mEyE1kZp72U0XQrhgJx/Pu8PhzpLsF9BsdDMXBR85rAMy/7ZPjR/9sM7Q4bUy45\n6rLM8bNHsjUMxg/ImVqqccqgOLr+Y2vcIdU58gfqbgNZH5TYRJ0EIbLGqY/9NfHr\nD9kJZHGVGcz5Ho8BPa678wFpvPq22f4qU2STr3MCgYBSclpax5xCuLrlQmT6nxIm\nwnhFiqb8MvaKmccGfxvnM3HWg/GnwFlHl7obS3QVdUhhoWxPscjhrRnZtqiYznEl\nuDA175Rn2IWgVguJ/aQsD94ntraDwyhOhdiZnvju54iKHMLLC3n01s7k0XEzkktl\nKtcEpgcML0jq92GbugRgKA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-a25ih@openuc2-microscope.iam.gserviceaccount.com",
+  "client_id": "114323586654388733480",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-a25ih%40openuc2-microscope.iam.gserviceaccount.com"
+}

@@ -31,6 +31,8 @@ imswitchServer.exec("ViewController", "liveview", [True])
 imswitchServer.exec("ViewController", "liveview", [False])
 
 
+imswitchServer.exec("PositionerController", "setSpeed", ["ESP32Stage", "X", (100,100,100)])
+
 
 
 class VideoTransformTrack(MediaStreamTrack):
